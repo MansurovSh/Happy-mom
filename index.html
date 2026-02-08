@@ -23,6 +23,8 @@
 <div class="hearts"></div>
 
 <script>
+let heartsStarted = false;
+let heartsInterval = null;
 function showLove() {
     for (let i = 0; i < 15; i++) {
         const heart = document.createElement("div");
@@ -39,11 +41,15 @@ function playMusic() {
     music.play();
 
     showLove(); // если у тебя есть сердца
-    setInterval(showLove, 500);
+     if (!heartsStarted) {
+        heartsInterval = setInterval(showLove, 500);
+        heartsStarted = true;
+    }
 }
 
 </script>
 
 </body>
 </html>
+
 
