@@ -6,13 +6,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+<audio id="bgMusic" loop>
+    <source src="чон модарам - модарам.mp3" type="audio/mpeg">
+</audio>
+
 <body>
 
 <div class="card">
     <h1>С днём рождения, мама 💖</h1>
     <p>Спасибо тебе за любовь, заботу и тепло.<br>Я тебя очень люблю 🌸</p>
 
-    <button onclick="showLove()">Нажми меня 💝</button>
+    <button onclick="playMusic()">Нажми меня 💝</button>
+
 </div>
 
 <div class="hearts"></div>
@@ -28,6 +33,14 @@ function showLove() {
         setTimeout(() => heart.remove(), 4000);
     }
 }
+function playMusic() {
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.4; // громкость
+    music.play();
+
+    showLove(); // если у тебя есть сердца
+}
+
 </script>
 
 </body>
